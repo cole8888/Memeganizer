@@ -22,6 +22,9 @@ There are various edgecases which have a higher chance of confusing the model, t
 
 Screenshots of text posts from Reddit, Twitter, Tumblr, Instagram, Facebook, 4chan, etc... will generally considered memes since this model cannot actually undstand the content of the text itself, it looks at the overall structure of the image.
 
+Keep in mind this model is not able to understand things like this:
+![Image](https://github.com/cole8888/Memeganizer/raw/main/Unable_to_Understand.jpg)
+
 The dataset so far includes 97000 Memes and 97000 Not-Memes totalling 102GB. It was mostly scraped from Reddit and Instagram. I have tried as hard as I can to have a diverse dataset ranging from Biology memes to Star Wars memes to Soccer memes and everything in between. The Not-Memes group has a very diverse pool of images ranging from selfies to plants to furniture. This group needs to be as diverse as possible.
 
 I manually sorted the first 4000 or so and have been using intermediate models to help do most of the initial sorting and build a larger and larger dataset. I also occasionally let the model sort a copy of it's own training dataset to let me see what templates / types it's struggling with, this also helps me find errors in the dataset. I manually go through all the new images I add after the intermediate model has sorted them to ensure that no mistakes are being made.

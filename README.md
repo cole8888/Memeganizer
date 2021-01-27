@@ -5,7 +5,7 @@ Neural network powered meme-organizing tool to help separate memes from images t
 
 It can help you free up space on your mobile device and make backing up your photos into the proper folders easier.  
 
-Please note that no neural network is perfect. As of writing, the model is >99.6% accurate according to my validation tests and first hand experience, but it can perform better or worse than this depending on the workload.
+Please note that no neural network is perfect. As of writing, the model performs quite well in my validation tests and based on my first hand experience. It can perform better or worse than depending on the image workload.
 
 There are various things in images or types of images which have a higher chance of confusing the model, these include:
 - Captions, text bars, filters or stickers.

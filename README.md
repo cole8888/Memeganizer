@@ -5,7 +5,7 @@ Neural network powered meme-organizing tool to help separate memes from images t
 
 It can help you free up space on your mobile device and make backing up your photos into the proper folders easier.  
 
-To run it the predictor, clone this repo, and then run:
+To run the predictor, clone this repo, and then run:
 `python3 Memeganizer/BinaryImageClassificationSuite.py --mode predict --home Memeganizer/Meme_Jan18-2021/ --size 224 --save_score --images /PATH_TO_IMAGES_TO_SORT/`
 
 If you would like to predict on an insane number of images (like >8000) or your computer does not have much ram, memory usage can become an issue.

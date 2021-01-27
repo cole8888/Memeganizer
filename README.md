@@ -5,6 +5,14 @@ Neural network powered meme-organizing tool to help separate memes from images t
 
 It can help you free up space on your mobile device and make backing up your photos into the proper folders easier.  
 
+To run it the predictor, clone this repo, and then run:
+`python3 Memeganizer/BinaryImageClassificationSuite.py --mode predict --home Memeganizer/Meme_Jan18-2021/ --size 224 --save_score --images /PATH_TO_IMAGES_TO_SORT/`
+
+If you would like to predict on an insane number of images (like >8000) or your computer does not have much ram, memory usage can become an issue.
+To avoid running out if memory I've implemented a chunk mode which will split up the workload into several "chunks", that way only a subset of all the images need to be in ram at any one moment. To use chunk mode:
+`python3 Memeganizer/BinaryImageClassificationSuite.py --mode predict --home Memeganizer/Meme_Jan18-2020/ --size 224 --save_score --chunks --mem X --images /PATH_TO_IMAGES_TO_SORT/`
+where X in `--mem X` is roughly how many gigabytes of ram you'd like to dedicate to the process. You can also use `--chunk_size` to change how many images corresponds to 1GB of memory usage (I found 1400 was pretty good).
+
 Please note that no neural network is perfect. As of writing, the model performs quite well in my validation tests and based on my first hand experience. It can perform better or worse than depending on the image workload.
 
 There are various things in images or types of images which have a higher chance of confusing the model, these include:

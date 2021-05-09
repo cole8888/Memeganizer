@@ -1,7 +1,7 @@
 # BinaryImageClassificationSuite.py
 # Used for the creation and implementation of a custom binary image classifier.
 
-# Cole Lightfoot - 26 Jan 2021 - https://github.com/cole8888/
+# Cole Lightfoot - 9 May 2021 - https://github.com/cole8888/
 
 # Imports, Tensorflow imports are later
 import os
@@ -395,7 +395,6 @@ def sort_set(data):
         os.mkdir(os.path.join(sort_dir, "UNSURE", str(item)))
     # Move the images to the specified location.
     # Source and destination must be on the same partition!
-
     for i in data:
         # This fails sometimes for unknown IO reasons, catch exceptions and move on.
         try:
@@ -602,8 +601,8 @@ def write_csv(data):
     csv_book = open(os.path.join(args.images, "results.csv"), 'w')
     writer = csv.writer(csv_book)
     with csv_book:
-            writer.writerow(header)
-            writer.writerows(data)
+        writer.writerow(header)
+        writer.writerows(data)
     csv_book.close()
 
 def predict():
@@ -735,11 +734,14 @@ def predict():
 # Function to delete incompatible files which may be scrapped. Helps save drive space.
 def cleanFolder():
     i = 0
+    exts = [".mp4", ".mkv", ".webm", ".gif", ".mp3", ".m4a", ".ico"]
     for r, d, f in os.walk(args.images):
         for file in f:
-            if(file.endswith(".mp4") or file.endswith(".mkv") or file.endswith(".webm") or file.endswith(".gif") or file.endswith(".MP4") or file.endswith(".MKV") or file.endswith(".WEBM") or file.endswith(".GIF")):
-                os.remove(os.path.join(r, file))
-                i+=1
+            for j in exts:
+                if(file.lower().endswith(j)):
+                    os.remove(os.path.join(r, file))
+                    i+=1
+                    break
     print("\nDeleted " + str(i) + " files.")
 
 if(args.mode == "train"):
